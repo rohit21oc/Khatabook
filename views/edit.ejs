@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Hisaab</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h2 a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-details {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 150px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+.logo a{
+            text-decoration: none;
+            color: #000;
+        }
+     </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"> <a href="/">Khaatabook</a></div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/create">Create New Hisaab</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>You're editing hisaab of <a href="/hisaab/<%=filename%>"><%= filename.split('.')[0] %></a> date</h2>
+        <form action="/update/<%= filename %>" method="post">
+            <textarea name="filedata" class="input-details" required><%= filedata %></textarea>
+            <button type="submit" class="submit-button">Update Hisaab</button>
+        </form>
+    </div>
+</body>
+</html>

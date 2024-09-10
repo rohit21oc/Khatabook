@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Hisaab</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        h2 a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        h2 a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .edit-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .logo a{
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/">Khaatabook</a> </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/create">Create New Hisaab</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Hisaab of <a href="/hisaab/<%=filename%>"><%= filename.split(".")[0] %></a> date</h2>
+        <p><%= filedata %></p>
+        <button class="edit-button"> <a href="/edithisaab/<%=filename%>">Edit Hisaab</a> </button>
+    </div>
+</body>
+</html>
